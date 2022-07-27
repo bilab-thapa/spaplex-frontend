@@ -10,10 +10,10 @@ import {
 import styled from "styled-components";
 import { mobile } from "../responsive";
 import { Link } from "react-router-dom";
-import { colors } from "@material-ui/core";
 
 const Container = styled.div`
   display: flex;
+  background-color: #fff0f5;
   ${mobile({ flexDirection: "column" })}
 `;
 
@@ -82,19 +82,18 @@ const ContactItem = styled.div`
   align-items: center;
 `;
 
-const Payment = styled.img`
-    width: 50%;
-`;
 
 const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>PROGULF LUBRICANTS</Logo>
+        <Logo>SPAPLEX INC.</Logo>
         <Desc>
-          There are many variations of lubricants of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. A iaculis at erat pellentesque. Ac odio tempor orci dapibus. 
+        Nibh praesent tristique magna sit. Feugiat nibh sed pulvinar proin gravida hendrerit lectus a. 
+        Et odio pellentesque diam volutpat commodo. Imperdiet proin fermentum leo vel. Augue mauris
+        augue neque gravida in fermentum. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. 
         </Desc>
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -112,7 +111,7 @@ const Footer = () => {
         </SocialContainer>
       </Left>
       <Center>
-        <Title>Useful Links</Title>
+        <Title>Links</Title>
         <List>
           <ListItem><Link style={{textDecoration: 'none', color: "black"}} to = '/'>Home</Link></ListItem>
           <ListItem><Link style={{textDecoration: 'none', color: "black"}} to = '/'>My Account</Link></ListItem>
@@ -125,15 +124,15 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{marginRight:"10px"}}/> Budhanilkanth-12, Kathmandu
+          <Room style={{marginRight:"10px"}}/> Kalopul, Kathmandu
         </ContactItem>
         <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +977 9810345454
+          <Phone style={{marginRight:"10px"}}/> +977 9861062587
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> info@autoforcenepal.com
+          <MailOutline style={{marginRight:"10px"}} /> customerservice@spaplex.com
         </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        
       </Right>
     </Container>
   );

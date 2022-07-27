@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
@@ -175,18 +174,22 @@ const Cart = () => {
         const res = await axios.post("http://localhost:3001/api/checkout/payment", {
           tokenId: stripeToken.id,
           amount: cart.total,
+          
         });
         history.push("/success", {
           stripeData: res.data,
           products: cart, });
-      } catch {}
+          
+      } catch {
+        
+      }
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
   return (
     <Container>
       <Navbar />
-      <Announcement />
+   
       <Wrapper>
         <Title>YOUR CART</Title>
         <Top>
@@ -245,18 +248,15 @@ const Cart = () => {
               <SummaryItemPrice>Rs {cart.total}</SummaryItemPrice>
             </SummaryItem>
             <StripeCheckout
-              name="Progulf Lubricants"
-              image="https://thumbs.dreamstime.com/b/motor-oil-gauge-icon-outline-motor-oil-gauge-vector-icon-color-flat-isolated-motor-oil-gauge-icon-color-outline-vector-230641681.jpg"
+              name="SPAPLEX INC"
+              image="https://icons-for-free.com/download-icon-complete+done+green+success+valid+icon-1320183462969251652_512.png"
               billingAddress
               shippingAddress
-              description={`Your total is Rs ${cart.total}`}
-              amount={cart.total * 100}
+              amount= {'Rs' + cart.total * 100}
               token={onToken}
               stripeKey={KEY}
             >
               <Button>CHECKOUT NOW</Button>
-              
-          
             </StripeCheckout>
           </Summary>
         </Bottom>

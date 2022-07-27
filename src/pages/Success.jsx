@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
-import { userRequest } from "../requestMethods";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { clearCart } from "../redux/cartRedux";
 import styled from "styled-components";
+import axios from "axios";
 
 const Button = styled.button`
 padding: 15px;
@@ -26,15 +24,13 @@ const Success = () => {
   const cart = location.state.cart;
   const currentUser = useSelector((state) => state.user.currentUser);
   const [orderId, setOrderId] = useState(null);
-  const dispatch = useDispatch();
 
- 
   
 
   useEffect(() => {
     const createOrder = async () => {
       try {
-        const res = await userRequest.post("/orders", {
+        const res = await axios.post("http://localhost/api/orders", {
           userId: currentUser._id,
           products: cart.products.map((item) => ({
             productId: item._id,
@@ -48,12 +44,6 @@ const Success = () => {
     };
     data && createOrder();
   }, [cart, data, currentUser]);
-
-  const handleClick = () => {
-    dispatch(
-      clearCart()
-    );
-  };
 
   return (
     <div
@@ -69,7 +59,7 @@ const Success = () => {
         ? `Order has been created successfully. Your order number is ${orderId}`
         : `Successfull. Your order is being prepared...`}
         <Link to = '/'>
-      <Button onClick={handleClick} style={{ padding: 10, marginTop: 20 }}>Go to Homepage</Button>
+      <Button  style={{ padding: 10, marginTop: 20 }}>Go to Homepage</Button>
       </Link>
     </div>
   );

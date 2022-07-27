@@ -12,7 +12,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://res.cloudinary.com/bilabthapa/image/upload/v1658828840/progulf/mig_opebmm.jpg")
+    url("https://cdn.cdnparenting.com/articles/2018/09/15-beauty-products-you-dont-need-to-waste-your-money-on.webp")
       center;
   background-size: cover;
   display: flex;
@@ -23,14 +23,14 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
-  background-color: teal;
+ background-color: pink;
   ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
   font-size: 24px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
+  color: black;
 `;
 
 const Form = styled.form`
@@ -48,15 +48,15 @@ const Input = styled.input`
 const Agreement = styled.span`
   font-size: 12px;
   margin: 20px 0px;
-  color: white;
+  color: black;
 `;
 
 const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: white;
-  color: black;
+  background-color: red;
+  color: white;
   cursor: pointer;
 `;
 

@@ -8,29 +8,16 @@ export const login = async (dispatch, user) => {
 
   try {
     const res = await axios.post("http://localhost:3001/api/auth/login", user)
-    // .then((response)=>{
-    //   console.log(loginSuccess(res.data))
-    //   if(response.data.token){  
-    //     //It will store the token locallt, so that it is available all over the component
-    //     localStorage.setItem("ticket",response.data.token);
-    //     //redirect to the home
-    //     <Link to ='/'></Link>
-    //     window.location.replace('/')
-    //     }else{
-    //         console.log("Invalid credential!")
-    //     }
-    // })
     dispatch(loginSuccess(res.data))
     alert("Login Successful!")
-
     window.location.replace('/');
-    
+    const loggedIn = true;
     
   } catch (err) {
     dispatch(loginFailure());
     alert("Invalid Details!")
     console.log("failed")
-    // window.location.replace('/')
+    const loggedIn = false;
   
   }
 };

@@ -7,12 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
-
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: 
-    url("https://res.cloudinary.com/bilabthapa/image/upload/v1658830504/progulf/rick-gebhardt-n52K1_3aZDE-unsplash_iq07xl.jpg")
+    url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/beauty-products-1603140461.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*")
       center;
   background-size: cover;
   display: flex;
@@ -23,14 +22,14 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
-  background-color: teal;
+  background-color: pink;
   ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
-  color: white;
+  color: black;
 `;
 
 const Form = styled.form`
@@ -51,8 +50,8 @@ const Button = styled.button`
   width: 40%;
   border: none;
   padding: 15px 20px;
-  background-color: white ;
-  color: black;
+  background-color: red ;
+  color: white;
   cursor: pointer;
   margin-bottom: 20px;
   &:disabled {
@@ -95,7 +94,7 @@ const Login = (details) => {
           <Button onClick={handleClick} disabled = {isFetching}>
             LOGIN
           </Button>
-          <Link style={{textDecoration: 'none',color : 'white'}}  to = '/register'>CREATE A NEW ACCOUNT</Link>
+          <Link style={{textDecoration: 'none',color : 'black'}}  to = '/register'>CREATE A NEW ACCOUNT</Link>
         </Form>
 
       </Wrapper>

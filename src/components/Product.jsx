@@ -50,8 +50,10 @@ const Circle = styled.div`
 `;
 
 const Image = styled.img`
-  height: 75%;
+  height: 60%;
   z-index: 2;
+  object-fit: contain;
+  border-radius: 50%;
 `;
 
 const Icon = styled.div`

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Products from "../components/Products";
-import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router";
@@ -59,17 +58,6 @@ const ProductList = () => {
       <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
-          <FilterText>Filter Products:</FilterText>
-          <Select name="size" onChange={handleFilters}>
-            <Option disabled>Size</Option>
-            <Option>1</Option>
-            <Option>1.2</Option>
-            <Option>2.5</Option>
-            <Option>5</Option>
-            <Option>8</Option>
-          </Select>
-        </Filter>
-        <Filter>
           <FilterText>Sort Products:</FilterText>
           <Select onChange={(e) => setSort(e.target.value)}>
             <Option value="newest">Newest</Option>
@@ -79,7 +67,6 @@ const ProductList = () => {
         </Filter>
       </FilterContainer>
       <Products cat={cat} filters={filters} sort={sort} />
-      <Newsletter />
       <Footer />
     </Container>
   );
